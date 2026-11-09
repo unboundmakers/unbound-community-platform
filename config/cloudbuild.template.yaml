@@ -1,0 +1,15 @@
+# Run against an operator-owned application source directory, not this module repository.
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', '${_DOCKERFILE}', '-t', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$BUILD_ID', '.']
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$BUILD_ID'
+serviceAccount: '${_BUILD_SA}'
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _REGION: us-central1
+  _REPOSITORY: replace-with-repository
+  _IMAGE_NAME: replace-with-image-name
+  _DOCKERFILE: Dockerfile
+  _BUILD_SA: replace-with-build-service-account-resource
