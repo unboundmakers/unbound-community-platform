@@ -1,0 +1,16 @@
+{
+  "name": "unbound-community-gcp-integrations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generic Google Cloud integration modules extracted from a community publishing project.",
+  "main": "modules/firestore-documents.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check modules/firestore-documents.js && node --check modules/runtime-config.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "7.11.0"
+  }
+}

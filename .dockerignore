@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+.runtime
+local-validation
+*.zip
+*.log
+*credentials*.json
+*service-account*.json
+.DS_Store
